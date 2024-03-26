@@ -10,3 +10,9 @@ reloadOnUpdate('pages/background');
 reloadOnUpdate('pages/content/style.scss');
 
 console.log('background loaded');
+
+chrome.action.onClicked.addListener(() => {
+  // console.log('图标被点击，执行逻辑');
+  // 恢复上一个关闭的标签页
+  chrome.sessions.restore();
+});
